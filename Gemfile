@@ -1,8 +1,10 @@
 source 'https://rubygems.org'
 
+gem 'authlogic'
 gem 'exception_notification'
 gem 'haml-rails'
 gem 'jquery-rails'
+gem 'paperclip'
 gem 'sqlite3'
 gem 'rails', '3.2.7'
 gem 'rvm-capistrano'
