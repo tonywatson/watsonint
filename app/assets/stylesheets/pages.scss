@@ -1,0 +1,35 @@
+@import "bootstrap/mixins"; 
+
+.action {
+  margin: 15px 0 10px; 
+}
+
+i {
+  font-size: 15px; 
+}
+
+.navbar-inner {
+  padding: 5px; 
+}
+
+#overview {
+  margin: 0 0 30px; 
+  padding-top: 100px; 
+}
+
+.right {
+  float: right; 
+}
+
+.thumbnail {
+  @include border-radius(10px); 
+  padding: 2px; 
+  width: 300px; 
+  .caption {
+    display: inline-block; 
+    margin: 5px 20px; 
+  }
+  img {
+    @include border-radius(10px 10px 0px 0px); 
+  }
+}
