@@ -1,0 +1,14 @@
+development:
+  bucket: development_watsonint
+  access_key_id: &access_key_id AKIAI6JJRPLQXFICOCWQ
+  secret_access_key: &secret_access_key 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
+  
+staging:
+  bucket: staging_watsonint
+  access_key_id: *access_key_id
+  secret_access_key: *secret_access_key
+  
+production:
+  bucket: production_watsonint
+  access_key_id: *access_key_id
+  secret_access_key: *secret_access_key

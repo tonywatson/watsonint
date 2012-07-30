@@ -1,0 +1,10 @@
+- if object.errors.size > 0
+  - if object.class == UserSession && object.errors.size == 1
+    .flash.error
+      %strong= object.errors.full_messages[0]
+  - else
+    .flash.errors
+      %strong There were errors with your submission:
+      %ul
+        - object.errors.full_messages.each do |error|
+          %li= error

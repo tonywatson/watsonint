@@ -9,6 +9,10 @@ body, h1, h3, p {
   margin: 15px 0 10px; 
 }
 
+.container, .navbar-fixed-top .container {
+	width: 1000px;
+}
+
 h1 {
   font-weight: 700; 
 }
@@ -28,7 +32,8 @@ i {
 #overview {
   font-size: 15px; 
   margin: 0 0 30px; 
-  padding-top: 100px; 
+	padding-bottom: 30px;
+  padding-top: 90px;
 }
 
 p {

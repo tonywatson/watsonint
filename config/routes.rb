@@ -1,4 +1,6 @@
 Watsonint::Application.routes.draw do
+  resources :images
+
   match '/login' => 'sessions#new', :as => :login
   match '/logout' => 'sessions#destroy', :as => :logout
 

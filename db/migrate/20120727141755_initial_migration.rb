@@ -8,13 +8,16 @@ class InitialMigration < ActiveRecord::Migration
       t.timestamps
     end
     
-    create_table :projects do |t|
-      t.string :name, :caption, :description, :url
+    create_table :images do |t|
+      t.references :imageable, :polymorphic => true
+      t.string   :photo_file_name, :photo_content_type
+      t.integer  :photo_file_size
       t.timestamps
     end
+    add_index :images, [:imageable_id, :imageable_type]
     
-    create_table :photos do |t|
-      t.has_attached_file :image
+    create_table :projects do |t|
+      t.string :name, :caption, :description, :url
       t.timestamps
     end
   end

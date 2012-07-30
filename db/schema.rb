@@ -13,14 +13,17 @@
 
 ActiveRecord::Schema.define(:version => 20120727141755) do
 
-  create_table "photos", :force => true do |t|
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
+  create_table "images", :force => true do |t|
+    t.integer  "imageable_id"
+    t.string   "imageable_type"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
   end
+
+  add_index "images", ["imageable_id", "imageable_type"], :name => "index_images_on_imageable_id_and_imageable_type"
 
   create_table "projects", :force => true do |t|
     t.string   "name"

@@ -1,3 +1,4 @@
 class Project < ActiveRecord::Base
-  # attr_accessible :title, :body
+  attr_accessible :caption, :description, :name, :url
+  has_many :images, :as => :imageable
 end
