@@ -1,10 +1,10 @@
 = render 'partials/error_messages', :object => @image, :as => :object
 = form_for @image do |f|
   = f.hidden_field :imageable_type, :value => 'Project'
+  %br
   = collection_select(:image, :imageable_id, Project.all, :id, :name, :prompt => true)
-  = f.hidden_field :imageable_id, :value => @user.profile.id
+  %br
   = f.file_field :photo, :class => 'input-file'
-  = f.submit
 
   .actions
     = f.submit 'Save'

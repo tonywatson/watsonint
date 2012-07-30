@@ -1,13 +1,12 @@
 class PagesController < ApplicationController
 
   def index
+    @projects = Project.all
     respond_to do |format|
       format.html # index.html.erb
     end
   end
 
-  # GET /pages/1
-  # GET /pages/1.json
   def show
     @page = Page.find(params[:id])
 

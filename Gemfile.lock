@@ -38,11 +38,6 @@ GEM
       builder
       mime-types
       xml-simple
-    aws-sdk (1.5.8)
-      httparty (~> 0.7)
-      json (~> 1.4)
-      nokogiri (>= 1.4.4)
-      uuidtools (~> 2.1)
     bootstrap-sass (2.0.4.0)
     builder (3.0.0)
     capistrano (2.12.0)
@@ -115,9 +110,6 @@ GEM
       railties (~> 3.0)
     highline (1.6.13)
     hike (1.2.1)
-    httparty (0.8.3)
-      multi_json (~> 1.0)
-      multi_xml
     i18n (0.6.0)
     jasmine (1.2.0)
       jasmine-core (>= 1.2.0)
@@ -147,7 +139,6 @@ GEM
     method_source (0.8)
     mime-types (1.19)
     multi_json (1.3.6)
-    multi_xml (0.5.1)
     mysql2 (0.3.11)
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
@@ -162,9 +153,6 @@ GEM
       activesupport (>= 2.3.2)
       cocaine (>= 0.0.2)
       mime-types
-    paperclip-s3 (1.0.0)
-      aws-s3 (~> 0.6.2)
-      paperclip (~> 2.3.11)
     polyglot (0.3.3)
     pry (0.9.10)
       coderay (~> 1.0.5)
@@ -262,7 +250,6 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
-    uuidtools (2.1.3)
     xml-simple (1.1.1)
     xpath (0.1.4)
       nokogiri (~> 1.3)
@@ -273,7 +260,6 @@ PLATFORMS
 DEPENDENCIES
   authlogic
   aws-s3
-  aws-sdk
   bootstrap-sass
   capistrano-ext
   capistrano_colors
@@ -288,8 +274,7 @@ DEPENDENCIES
   jasmine
   jquery-rails
   mysql2
-  paperclip (~> 2.3.11)
-  paperclip-s3
+  paperclip
   pry
   rails (= 3.2.7)
   rspec-rails

@@ -1,18 +1,9 @@
 #overview.hero-unit
   %h1 One Man Band
   %p This is a compilation of some of my latest work.
-.thumbnail
-  = image_tag "/assets/projects/katy.jpg"
-  .caption
-    %h3 Tickets for Charity
-    %p Simple signup form used within the Tickets for Charity's Facebook App
-    %i.icon-beaker
-    Design | HTML | CSS | JQuery
-    .clear
-    .action
-      %btn.btn
-        %i.icon-eye-open
-        view project
+
+- @projects.each do |project|
+  = render :partial => '/projects/show', :locals => {:project => project}
 
 %br
 %br

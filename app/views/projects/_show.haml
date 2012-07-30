@@ -1,12 +1,15 @@
 .thumbnail
-  = image_tag "/assets/projects/katy.jpg"
+  = link_to image_tag(project.images.first.photo(:list)), project
   .caption
-    %h3= project.name
+    %h3= link_to project.name, project
     %p= project.caption
     %i.icon-beaker
-    Design | HTML | CSS | JQuery
+    - skills = ""
+    - project.skills.each do |skill|
+      - skills += " #{Skill.find(skill).name} |"
+    = skills.chop
     .clear
     .action
-      %btn.btn
+      = link_to(project, :class => 'btn') do 
         %i.icon-eye-open
         view project

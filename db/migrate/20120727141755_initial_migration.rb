@@ -20,6 +20,11 @@ class InitialMigration < ActiveRecord::Migration
       t.string :name, :caption, :description, :url
       t.timestamps
     end
+    
+    create_table :skills do |t|
+      t.string :name
+      t.timestamps
+    end
   end
   
   def self.down

@@ -1,7 +1,12 @@
-#overview
-  %p#notice= notice
-
-
-= link_to 'Edit', edit_project_path(@project)
-\|
-= link_to 'Back', projects_path
+#overview.hero-unit
+  %h2= @project.name
+  %i= link_to(@project.url, "http://#{@project.url}") unless @project.url.nil?
+  %p= @project.description.nil? ? @project.caption : @project.description
+  %i.icon-beaker
+  - skills = ""
+  - @project.skills.each do |skill|
+    - skills += " #{Skill.find(skill).name} |"
+  = skills.chop
+  
+- @project.images.each do |image|
+  = image_tag image.photo.url(:list)

@@ -1,0 +1,5 @@
+= render 'partials/error_messages', :object => @skill, :as => :object
+= form_for @skill do |f|
+  = f.text_field :name
+  .actions
+    = f.submit 'Save'

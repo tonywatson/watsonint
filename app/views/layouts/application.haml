@@ -2,7 +2,7 @@
 %html
 %head
   %head
-    %title WatsonInt | Personal Portfolio
+    %title WatsonInt | Personal Portfolio #{@page_title ? "| #{@page_title}" : nil}
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
@@ -14,12 +14,14 @@
         .left
           %ul.nav
             %li= link_to "Home", '/'
-            %li.divider-vertical
-            %li= link_to "My Life", '#'
+            / %li.divider-vertical
+            / %li
+            /   = link_to "My Life", '#'
             %li.divider-vertical
             %li= link_to "Projects", '/projects'
-            %li.divider-vertical
-            %li= link_to "Contact", '#'
+            / %li.divider-vertical
+            / %li
+            /   = link_to "Contact", '#'
             %li.divider-vertical
             %li
               - if current_user

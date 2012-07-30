@@ -1,0 +1,24 @@
+- @page_title = "Login"
+
+#overview.hero-unit
+  %h2 Login
+  %p Please enter your email address and password below to log in.
+  
+= render 'partials/error_messages', :object => @user_session, :as => :object
+
+= form_for :user_session, :url => session_path do |f|
+  .field
+    Email address
+    %br
+    = f.text_field :email_address
+  .field
+    Password
+    %br
+    = f.password_field :password    
+  .clear
+  %br
+  .left
+    = f.submit "Sign In", :class => 'button right', :id => "session_submit"
+
+.clear
+%br

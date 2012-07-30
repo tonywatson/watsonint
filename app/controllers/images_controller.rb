@@ -25,6 +25,7 @@ class ImagesController < ApplicationController
   # GET /images/new.json
   def new
     @image = Image.new
+    # @image = @imageable unless @imageable.nil?
 
     respond_to do |format|
       format.html # new.html.erb
@@ -32,29 +33,23 @@ class ImagesController < ApplicationController
     end
   end
 
-  # GET /images/1/edit
   def edit
     @image = Image.find(params[:id])
   end
-
-  # POST /images
-  # POST /images.json
+  
   def create
-    @image = Image.new(params[:image])
+    @imageable = find_imageable(params[:image])
+    @image = @imageable.images.build(params[:image])
 
     respond_to do |format|
       if @image.save
-        format.html { redirect_to @image, notice: 'Image was successfully created.' }
-        format.json { render json: @image, status: :created, location: @image }
+        format.html { redirect_to @imageable, notice: 'Image was successfully created.' }
       else
         format.html { render action: "new" }
-        format.json { render json: @image.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # PUT /images/1
-  # PUT /images/1.json
   def update
     @image = Image.find(params[:id])
 
@@ -80,4 +75,9 @@ class ImagesController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  private
+    def find_imageable(image_hash)
+      return image_hash[:imageable_type].constantize.find(image_hash[:imageable_id])
+    end
 end

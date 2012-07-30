@@ -3,6 +3,7 @@ class ProjectsController < ApplicationController
   # GET /projects.json
   def index
     @projects = Project.all
+    @page_title = "Projects"
 
     respond_to do |format|
       format.html # index.html.erb
@@ -10,8 +11,6 @@ class ProjectsController < ApplicationController
     end
   end
 
-  # GET /projects/1
-  # GET /projects/1.json
   def show
     @project = Project.find(params[:id])
 
@@ -41,6 +40,7 @@ class ProjectsController < ApplicationController
   # POST /projects.json
   def create
     @project = Project.new(params[:project])
+    params[:project][:skills] = params[:skills]
 
     respond_to do |format|
       if @project.save
@@ -53,10 +53,9 @@ class ProjectsController < ApplicationController
     end
   end
 
-  # PUT /projects/1
-  # PUT /projects/1.json
   def update
     @project = Project.find(params[:id])
+    params[:project][:skills] = params[:skills]
 
     respond_to do |format|
       if @project.update_attributes(params[:project])
@@ -69,8 +68,6 @@ class ProjectsController < ApplicationController
     end
   end
 
-  # DELETE /projects/1
-  # DELETE /projects/1.json
   def destroy
     @project = Project.find(params[:id])
     @project.destroy
