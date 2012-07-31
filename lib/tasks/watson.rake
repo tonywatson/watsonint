@@ -29,7 +29,7 @@ namespace :watson do
     %x(git push -f origin production)
     %x(cap production deploy)
     %x(git checkout #{branch})
-    Rake::Task['tn:cleanup'].invoke unless ENV['CLEANUP'] == 'false'
+    Rake::Task['watson:cleanup'].invoke unless ENV['CLEANUP'] == 'false'
   end
 
   desc "Clean up current branch by destroying local branch and remote tracking branch"
