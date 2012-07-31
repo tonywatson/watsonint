@@ -4,10 +4,11 @@
     %h3= link_to project.name, project
     %p= project.caption
     %i.icon-beaker
-    - skills = ""
-    - project.skills.each do |skill|
-      - skills += " #{Skill.find(skill).name} |"
-    = skills.chop
+    - unless project.skills.nil?
+      - skills = ""
+      - project.skills.each do |skill|
+        - skills += " #{Skill.find(skill).name} |"
+      = skills.chop
     .clear
     .action
       = link_to(project, :class => 'btn') do 

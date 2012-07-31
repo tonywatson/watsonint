@@ -38,7 +38,7 @@ class ProjectsController < ApplicationController
   # POST /projects.json
   def create
     @project = Project.new(params[:project])
-    params[:project][:skills] = params[:skills]
+    @project.skills = params[:skills]
 
     respond_to do |format|
       if @project.save

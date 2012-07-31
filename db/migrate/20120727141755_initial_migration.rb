@@ -18,6 +18,7 @@ class InitialMigration < ActiveRecord::Migration
     
     create_table :projects do |t|
       t.string :name, :caption, :description, :url
+      t.text :skills
       t.timestamps
     end
     
