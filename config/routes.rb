@@ -6,7 +6,7 @@ Watsonint::Application.routes.draw do
   match '/login' => 'user_sessions#new', :as => :login
   match '/logout' => 'user_sessions#destroy', :as => :logout
 
-  resource :session, :only => [:new, :create, :destroy]
+  resource :user_session, :only => [:new, :create, :destroy]
     
   resources :pages
   resources :projects

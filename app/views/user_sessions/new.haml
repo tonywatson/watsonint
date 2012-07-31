@@ -6,7 +6,7 @@
   
 = render 'partials/error_messages', :object => @user_session, :as => :object
 
-= form_for :user_session, :url => session_path do |f|
+= form_for :user_session, :url => user_session_path do |f|
   .field
     Email address
     %br

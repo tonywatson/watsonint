@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
 
     def require_user
       unless signed_in?
-        redirect_to new_user_session_path and return
+        redirect_to (session[:return_to] || login_path) and return
       end
     end
 

@@ -22,12 +22,9 @@
             / %li.divider-vertical
             / %li
             /   = link_to "Contact", '#'
-            %li.divider-vertical
-            %li
-              - if current_user
-                = link_to "Logout", logout_path
-              - else
-                = link_to "Login", login_path
+            - if current_user
+              %li.divider-vertical
+              %li= link_to "Logout", logout_path
         .right
           = link_to image_tag('logo.png'), '/'
   .container

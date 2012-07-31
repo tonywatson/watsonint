@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
-  # GET /projects
-  # GET /projects.json
+  
+  before_filter :require_user, :except => [:index, :show]
+
   def index
     @projects = Project.all
     @page_title = "Projects"
@@ -20,8 +21,6 @@ class ProjectsController < ApplicationController
     end
   end
 
-  # GET /projects/new
-  # GET /projects/new.json
   def new
     @project = Project.new
 
@@ -31,7 +30,6 @@ class ProjectsController < ApplicationController
     end
   end
 
-  # GET /projects/1/edit
   def edit
     @project = Project.find(params[:id])
   end
