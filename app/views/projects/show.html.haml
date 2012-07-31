@@ -3,10 +3,11 @@
   %i= link_to(@project.url, "http://#{@project.url}", :target => '_blank') unless @project.url.nil?
   %p= @project.description.nil? ? @project.caption : @project.description
   %i.icon-beaker
-  - skills = ""
-  - @project.skills.each do |skill|
-    - skills += " #{Skill.find(skill).name} |"
-  = skills.chop
+  - unless @project.skills.nil?
+    - skills = ""
+    - @project.skills.each do |skill|
+      - skills += " #{Skill.find(skill).name} |"
+    = skills.chop
   
 - @project.images.each do |image|
   = image_tag image.photo.url(:large)
