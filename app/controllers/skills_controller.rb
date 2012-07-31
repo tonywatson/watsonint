@@ -1,6 +1,7 @@
 class SkillsController < ApplicationController
-  # GET /skills
-  # GET /skills.json
+  
+  before_filter :require_user
+
   def index
     @skills = Skill.all
 
@@ -10,8 +11,6 @@ class SkillsController < ApplicationController
     end
   end
 
-  # GET /skills/1
-  # GET /skills/1.json
   def show
     @skill = Skill.find(params[:id])
 
