@@ -1,6 +1,6 @@
 #overview.hero-unit
   %h2= @project.name
-  %i= link_to(@project.url, "http://#{@project.url}") unless @project.url.nil?
+  %i= link_to(@project.url, "http://#{@project.url}", :target => '_blank') unless @project.url.nil?
   %p= @project.description.nil? ? @project.caption : @project.description
   %i.icon-beaker
   - skills = ""
