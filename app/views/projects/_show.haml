@@ -1,5 +1,5 @@
 .thumbnail
-  = link_to image_tag(project.images.first.photo(:list)), project
+  = link_to image_tag(project.images.first.photo(:list)), project unless project.images.nil?
   .caption
     %h3= link_to project.name, project
     %p= project.caption

@@ -17,8 +17,8 @@ class InitialMigration < ActiveRecord::Migration
     add_index :images, [:imageable_id, :imageable_type]
     
     create_table :projects do |t|
-      t.string :name, :caption, :description, :url
-      t.text :skills
+      t.string :name, :caption, :url
+      t.text :description, :skills
       t.timestamps
     end
     
