@@ -9,6 +9,12 @@ body, h1, h3, p {
   margin: 15px 0 10px; 
 }
 
+.caption {
+	p {
+		line-height: 15px;
+	}
+}
+
 .container, .navbar-fixed-top .container {
 	width: 1000px;
 }

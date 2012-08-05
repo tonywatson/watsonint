@@ -1,7 +1,7 @@
 .thumbnail
   = link_to image_tag(project.images.first.photo(:list)), project unless project.images.nil?
   .caption
-    %h3= link_to project.name, project
+    %h3= link_to truncate(project.name, :length => 28), project
     %p= project.caption
     %i.icon-beaker
     - unless project.skills.nil?

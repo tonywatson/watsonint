@@ -7,7 +7,7 @@ class Image < ActiveRecord::Base
   belongs_to :imageable, :polymorphic => true
   belongs_to :project
 
-  has_attached_file  :photo, :styles => { :large => "665>x450", :list => "300x200#" }, :s3_credentials => "#{Rails.root}/config/s3.yml",
+  has_attached_file  :photo, :styles => { :large => "1000>x650", :list => "300x200#" }, :s3_credentials => "#{Rails.root}/config/s3.yml",
                      :bucket => "#{Rails.env}_watsonint", :storage => :s3, :path => ":attachment/:id/:style.:extension"
 
   validates_attachment_size :photo, :less_than => 3.megabyte, :if => Proc.new {|a| a.photo.file?}
