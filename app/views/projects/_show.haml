@@ -8,7 +8,7 @@
       - skills = ""
       - project.skills.each do |skill|
         - skills += " #{Skill.find(skill).name} |"
-      = skills.chop
+      = truncate(skills.chop, :length => 37)
     .clear
     .action
       = link_to(project, :class => 'btn') do 

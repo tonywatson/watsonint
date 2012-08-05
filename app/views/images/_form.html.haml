@@ -2,6 +2,9 @@
 = form_for @image do |f|
   = f.hidden_field :imageable_type, :value => 'Project'
   %br
+  = image_tag(@image.photo(:tiny)) if @image.photo.file?
+  %br
+  %br
   = collection_select(:image, :imageable_id, Project.all, :id, :name, :prompt => true)
   %br
   = f.file_field :photo, :class => 'input-file'

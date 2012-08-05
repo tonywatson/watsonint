@@ -50,6 +50,10 @@ p {
   float: right; 
 }
 
+#skills {
+	height: 125px;
+}
+
 .thumbnail {
   @include border-radius(10px); 
   padding: 2px; 
