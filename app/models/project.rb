@@ -10,4 +10,8 @@ class Project < ActiveRecord::Base.extend(ActiveSupport::Memoizable)
   end
   memoize :project_name
   
+  def has_images
+    self.images.count > 0
+  end
+  
 end

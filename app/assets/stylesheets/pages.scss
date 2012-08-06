@@ -57,7 +57,7 @@ p {
 .thumbnail {
   @include border-radius(10px); 
 	float: left;
-	margin: 0 13px 0;
+	margin: 0 13px 25px;
   padding: 2px; 
   width: 300px; 
   .caption {

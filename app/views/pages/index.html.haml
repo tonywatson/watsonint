@@ -3,7 +3,7 @@
   %p This is a compilation of some of my latest work.
 
 - @projects.each do |project|
-  = render :partial => '/projects/show', :locals => {:project => project}
+  = render :partial => '/projects/show', :locals => {:project => project} if project.has_images
 
 %br
 %br
