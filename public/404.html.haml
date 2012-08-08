@@ -14,14 +14,8 @@
         .left
           %ul.nav
             %li= link_to "Home", '/'
-            / %li.divider-vertical
-            / %li
-            /   = link_to "My Life", '#'
             %li.divider-vertical
             %li= link_to "Projects", '/projects'
-            / %li.divider-vertical
-            / %li
-            /   = link_to "Contact", '#'
             - if current_user
               %li.divider-vertical
               %li= link_to "Logout", logout_path
