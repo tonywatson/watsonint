@@ -1,4 +1,8 @@
 class PagesController < ApplicationController
+  
+  def about
+    @projects = Project.all
+  end
 
   def index
     @projects = Project.all
