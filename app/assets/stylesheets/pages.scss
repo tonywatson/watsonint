@@ -27,8 +27,12 @@ i {
   font-size: 15px; 
 }
 
-.left {
+.img, .left {
   float: left; 
+}
+
+.img {
+	margin-right: 10px;
 }
 
 .navbar-inner {

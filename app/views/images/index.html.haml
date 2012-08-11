@@ -1,20 +1,13 @@
 #overview
   %h1 Listing images
+  = link_to 'New Image', new_image_path
 
-%table
-  %tr
-    %th
-    %th
-    %th
-    %th
-
-  - @images.each do |image|
-    %tr
-      %td= image_tag(image.photo(:tiny))
-      %td= link_to 'Show', image
-      %td= link_to 'Edit', edit_image_path(image)
-      %td= link_to 'Destroy', image, :confirm => 'Are you sure?', :method => :delete
+- @images.each do |image|
+  .img
+    = link_to image_tag(image.photo(:tiny)), edit_image_path(image)
+    %br
+    = link_to 'Edit', edit_image_path(image)
+    |
+    = link_to 'Destroy', image, :confirm => 'Are you sure?', :method => :delete
 
 %br
-
-= link_to 'New Image', new_image_path
