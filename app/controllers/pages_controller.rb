@@ -5,9 +5,18 @@ class PagesController < ApplicationController
   end
 
   def index
-    @projects = Project.all
+    @projects = Project.all.shuffle
     respond_to do |format|
       format.html # index.html.erb
+    end
+  end
+  
+  def new
+    @page = Page.new
+
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @page }
     end
   end
 
@@ -16,17 +25,6 @@ class PagesController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @page }
-    end
-  end
-
-  # GET /pages/new
-  # GET /pages/new.json
-  def new
-    @page = Page.new
-
-    respond_to do |format|
-      format.html # new.html.erb
       format.json { render json: @page }
     end
   end
