@@ -6,7 +6,7 @@ Watsonint::Application.routes.draw do
 
   resource :user_session, :only => [:new, :create, :destroy]
   
-  resources :images, :pages, :projects, :skilss
+  resources :images, :pages, :projects, :skills
   
   root :to => 'pages#index'
   
