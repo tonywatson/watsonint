@@ -1,4 +1,6 @@
 Watsonint::Application.routes.draw do
+  
+  get '/robots.txt' => 'pages#robots'
 
   match '/about' => 'pages#about', :as => :about
   match '/login' => 'user_sessions#new', :as => :login

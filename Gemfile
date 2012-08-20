@@ -8,7 +8,8 @@ gem 'haml-rails'
 gem 'jquery-rails'
 gem 'mysql2'
 gem 'paperclip'
-gem 'rails', '3.2.7'
+gem 'paperclip-s3'
+gem 'rails'
 gem 'rvm-capistrano'
 
 group :assets do

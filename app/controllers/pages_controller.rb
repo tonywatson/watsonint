@@ -19,6 +19,11 @@ class PagesController < ApplicationController
       format.json { render json: @page }
     end
   end
+  
+  def robots
+    robots = File.read(Rails.root + "config/robots.#{Rails.env}.txt")
+    render :text => robots, :layout => false, :content_type => "text/plain"
+  end
 
   def show
     @page = Page.find(params[:id])
