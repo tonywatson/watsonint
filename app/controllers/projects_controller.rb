@@ -13,12 +13,8 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    @project = Project.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @project }
-    end
+    @project = Project.find_by_id(params[:id])
+    redirect_to projects_path, :notice => 'Sorry, that project was not found.' if @project.nil?
   end
 
   def new

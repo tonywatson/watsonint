@@ -1,0 +1,7 @@
+- if flash[:notice] || flash[:error]
+  - unless flash[:notice].nil?
+    .alert
+      = flash[:notice].html_safe
+  - unless flash[:error].nil?
+    .alert.alert-error
+      = flash[:error].html_safe

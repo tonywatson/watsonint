@@ -9,7 +9,7 @@ gem 'jquery-rails'
 gem 'mysql2'
 gem 'paperclip'
 gem 'paperclip-s3'
-gem 'rails'
+gem 'rails', '3.2.13'
 gem 'rvm-capistrano'
 
 group :assets do
@@ -17,7 +17,6 @@ group :assets do
   gem 'coffee-rails'
   gem 'font-awesome-sass-rails'
   gem 'sass-rails'
-  gem 'therubyracer', :platforms => :ruby
   gem 'uglifier'
 end
 
@@ -27,9 +26,8 @@ group :development, :test do
   gem 'guard-rspec'
   gem 'jasmine'
   gem 'pry'
-  gem 'ruby-debug19'
-  gem 'thin'
   gem 'spork'
+  gem 'thin'
 end
 
 group :production, :staging do
