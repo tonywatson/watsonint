@@ -34,7 +34,7 @@ namespace :deploy do
   desc "Deploy your application"
   task :default do
     update_code
-    restart
+    start
   end
   
   desc "Update the deployed code."
