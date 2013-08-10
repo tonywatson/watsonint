@@ -5,26 +5,26 @@ set :user, "ubuntu"
 set :application, "watsonint"
 set :branch, "origin/master"
 set :repository, "git@github.com:tonywatson/watsonint.git"
-set :deploy_to, "/home/ubuntu/rails"
+set :deploy_to, "/home/ubuntu/rails/watsonint/"
 set :deploy_via, :remote_cache
 set :keep_releases, 2
 set :scm, :git
 set :use_sudo, false
-set :rvm_ruby_string, '1.9.2@watsonint'
+# set :rvm_ruby_string, '1.9.2@watsonint'
 set :normalize_asset_timestamps, false
 set :rvm_type, :user
 
 task :staging do
-  role :app, "107.21.218.245"
-  set  :location, "107.21.218.245"
+  role :app, "174.129.14.212"
+  set  :location, "174.129.14.212"
   role :web, location                   # Your HTTP server, Apache/etc
   role :db,  location, :primary => true # This is where Rails migrations will run
   rails_env = "staging"
 end
 
 task :production do
-  role :app, "107.21.218.245"
-  set  :location, "107.21.218.245"
+  role :app, "174.129.14.212"
+  set  :location, "174.129.14.212"
   role :web, location                          # Your HTTP server, Apache/etc
   role :db,  location, :primary => true # This is where Rails migrations will run
   rails_env = "production"
