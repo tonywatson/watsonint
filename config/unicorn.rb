@@ -4,9 +4,9 @@ env = ENV["RAILS_ENV"] || "development"
 
 # See http://unicorn.bogomips.org/Unicorn/Configurator.html for complete
 # documentation.
-worker_processes 3
+worker_processes 2
 
-worker_processes 2 if env == "staging"
+worker_processes 1 if env == "staging"
 
 # listen on both a Unix domain socket and a TCP port,
 # we use a shorter backlog for quicker failover when busy
@@ -18,17 +18,17 @@ preload_app true
 # nuke workers after 30 seconds instead of 60 seconds (the default)
 timeout 30
 
-pid "/home/ubuntu/rails/shared/pids/unicorn-watsonint.pid"
+pid "/home/ubuntu/watsonint/shared/pids/unicorn-watsonint.pid"
 
 # Production specific settings
 if env == "production"
   # Help ensure your application will always spawn in the symlinked
   # "current" directory that Capistrano sets up.
-  working_directory "/home/ubuntu/rails/current"
+  working_directory "/home/ubuntu/watsonint/current"
 
   # feel free to point this anywhere accessible on the filesystem
   user 'ubuntu', 'ubuntu'
-  shared_path = "/home/ubuntu/rails/shared"
+  shared_path = "/home/ubuntu/watsonint/shared"
 
   stderr_path "#{shared_path}/log/unicorn.stderr.log"
   stdout_path "#{shared_path}/log/unicorn.stdout.log"
@@ -41,7 +41,7 @@ before_fork do |server, worker|
 
   # Before forking, kill the master process that belongs to the .oldbin PID.
   # This enables 0 downtime deploys.
-  old_pid = "/home/ubuntu/rails/shared/pids/unicorn-watsonint.pid.oldbin"
+  old_pid = "/home/ubuntu/watsonint/shared/pids/unicorn-watsonint.pid.oldbin"
   if File.exists?(old_pid) && server.pid != old_pid
     begin
       sig = (worker.nr + 1) >= server.worker_processes ? :QUIT : :TTOU
