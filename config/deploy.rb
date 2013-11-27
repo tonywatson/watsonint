@@ -14,16 +14,16 @@ set :normalize_asset_timestamps, false
 set :rvm_type, :user
 
 task :staging do
-  role :app, "174.129.14.212"
-  set  :location, "174.129.14.212"
+  role :app, "54.243.216.84"
+  set  :location, "54.243.216.84"
   role :web, location                   # Your HTTP server, Apache/etc
   role :db,  location, :primary => true # This is where Rails migrations will run
   set :rails_env, "staging"
 end
 
 task :production do
-  role :app, "174.129.14.212"
-  set  :location, "174.129.14.212"
+  role :app, "54.243.216.84"
+  set  :location, "54.243.216.84"
   role :web, location                          # Your HTTP server, Apache/etc
   role :db,  location, :primary => true # This is where Rails migrations will run
   set :rails_env, "production"
